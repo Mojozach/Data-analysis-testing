@@ -1,0 +1,50 @@
+---
+title: "Untitled"
+format: html
+---
+
+```{python}
+import pandas as pd
+```
+
+```{python}
+# Create a dataset of basketball players
+data = {
+    "Player": ["John", "Mike", "Alex", "Chris", "David"],
+    "Points_Per_Game": [18, 24, 15, 21, 27],
+    "Rebounds_Per_Game": [5, 7, 4, 6, 8],
+    "Assists_Per_Game": [6, 5, 8, 4, 7]
+}
+```
+
+```{python}
+# Create a Pandas DataFrame
+players = pd.DataFrame(data)
+
+# Display the data
+players
+```
+
+```{python}
+# Basic summary statistics
+players.describe()
+```
+
+```{python}
+# Find the player with the most points
+top_scorer = players.loc[players["Points_Per_Game"].idxmax()]
+# Display top scorer
+top_scorer
+```
+
+```{python}
+# Select players who score at least 20 points per game
+high_scorers = players[players["Points_Per_Game"] >= 20]
+# Display high scorer
+high_scorers
+```
+
+```{python}
+# Calculate the team's average points per game
+players["Points_Per_Game"].mean()
+```
